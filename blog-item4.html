@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Programacion de Aplicaciones en Redes</title>
+    
+    <!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+
+    <header id="header">
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                </div>
+                
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+        
+    </header><!--/header-->
+
+
+    <section id="blog" class="container">
+        <div class="center">
+            <h2>Publications</h2>
+            <!--<p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>-->
+        </div>
+
+        <div class="blog">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="blog-item">
+                        <img class="img-responsive img-blog" src="images/caurosel/gtk-py.jpeg" width="100%" alt="" />
+                            <div class="row">  
+                                <div class="col-xs-12 col-sm-2 text-center">
+                                    <div class="entry-meta">
+                                        <span id="publish_date">28  SET</span>
+                                        <span><i class="fa fa-user"></i> <a href="#"> Meiser Gamboa</a></span>
+                                        <span><i class="fa fa-comment"></i> <a href="#">0 Comments</a></span>
+                                        <!--<span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>-->
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 blog-content">
+                                    <h2>Node Asincrono</h2>
+                                    <p>with this application we manage to use asynchronous node utilities, the project searches the length, latitude of the temperature using the api of google maps and darksky.net.</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post4_1.png" width="100%" alt="" />
+
+                                    <p>the data are entered with yargs of npm with the node js. We need to install the following dependencies:</p>
+
+                                    <pre>npm i yargs --save</pre>
+                                    <pre>npm install request --save</pre>
+
+
+
+                                    <p>This is a simple implementation of Promises. It is a super set of ES6 Promises designed to have readable, performant code and to provide just the extensions that are absolutely necessary for using promises today.
+
+For detailed tutorials on its use, see www.promisejs.org
+
+N.B. This promise exposes internals via underscore (_) prefixed properties. If you use these, your code will break with each new release.</p>
+
+                                    <p><stronng>Usage</stronng></p>
+<p> 
+The example below shows how you can load the promise library (in a way that works on both client and server using node or browserify). It then demonstrates creating a promise from scratch. You simply call new Promise(fn). There is a complete specification for what is returned by this method in Promises/A+.</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post4_2.png" width="100%" alt="" />
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post4_3.png" width="100%" alt="" />
+
+                                    <p>we show the json that returns the google api:</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post4_4.png" width="100%" alt="" />
+
+                                    <p>the address used with the api:</p>
+                                    <pre>https://maps.googleapis.com/maps/api/geocode/json?address=villa%maria</pre>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post4_5.png" width="100%" alt="" />
+                                </div>
+                            </div>
+                        </div><!--/.blog-item-->
+                        
+                        <div id="contact-page clearfix">
+                            <div class="status alert alert-success" style="display: none"></div>
+                            <div class="message_heading">
+                                <h4>Leave a Replay</h4>
+                                <p>Make sure you enter the(*)required information where indicate.HTML code is not allowed</p>
+                            </div> 
+      
+                            <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label>Name *</label>
+                                            <input type="text" class="form-control" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email *</label>
+                                            <input type="email" class="form-control" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>URL</label>
+                                            <input type="url" class="form-control">
+                                        </div>                    
+                                    </div>
+                                    <div class="col-sm-7">                        
+                                        <div class="form-group">
+                                            <label>Message *</label>
+                                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                                        </div>                        
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>     
+                        </div><!--/#contact-page-->
+                    </div><!--/.col-md-8-->
+
+                <aside class="col-md-4">
+                    <div class="widget search">
+                        <form role="form">
+                                <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
+                        </form>
+                    </div><!--/.search-->
+    				
+                    <div class="widget categories">
+                        <h3>Categories</h3>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="blog_category">
+                                    <li><a href="#">Computers <span class="badge">04</span></a></li>
+                                    <li><a href="#">Smartphone <span class="badge">10</span></a></li>
+                                    <li><a href="#">Gedgets <span class="badge">06</span></a></li>
+                                    <li><a href="#">Technology <span class="badge">25</span></a></li>
+                                </ul>
+                            </div>
+                        </div>                     
+                    </div><!--/.categories-->
+    				
+    				<div class="widget archieve">
+                        <h3>Archieve</h3>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="blog_archieve">
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> December 2013 <span class="pull-right">(97)</span></a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> November 2013 <span class="pull-right">(32)</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> October 2013 <span class="pull-right">(19)</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> September 2013 <span class="pull-right">(08)</a></li>
+                                </ul>
+                            </div>
+                        </div>                     
+                    </div><!--/.archieve-->
+    				
+                    <div class="widget tags">
+                        <h3>Tag Cloud</h3>
+                        <ul class="tag-cloud">
+                            <li><a class="btn btn-xs btn-primary" href="#">Apple</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Barcelona</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Office</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Ipod</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Stock</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Race</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">London</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Football</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Porche</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Gadgets</a></li>
+                        </ul>
+                    </div><!--/.tags-->
+    				
+                </aside>     
+
+            </div><!--/.row-->
+
+         </div><!--/.blog-->
+
+    </section><!--/#blog-->
+
+
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+</body>
+</html>
