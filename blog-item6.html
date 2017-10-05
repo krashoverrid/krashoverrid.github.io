@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Programacion de Aplicaciones en Redes</title>
+    
+    <!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+
+    <header id="header">
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                </div>
+                
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+        
+    </header><!--/header-->
+
+
+    <section id="blog" class="container">
+        <div class="center">
+            <h2>Publications</h2>
+            <!--<p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>-->
+        </div>
+
+        <div class="blog">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="blog-item">
+                        <img class="img-responsive img-blog" src="images/caurosel/nodejs.png" width="100%" alt="" />
+                            <div class="row">  
+                                <div class="col-xs-12 col-sm-2 text-center">
+                                    <div class="entry-meta">
+                                        <span id="publish_date">05  OCT</span>
+                                        <span><i class="fa fa-user"></i> <a href="#"> Meiser Gamboa</a></span>
+                                        <span><i class="fa fa-comment"></i> <a href="#">0 Comments</a></span>
+                                        <!--<span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>-->
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 blog-content">
+                                    <h2>Express</h2>
+                                    <p>Express was also built under the principle of API composition. Every piece of
+                                    software in Express is called middleware, and they are chained in the code in order
+                                    to process every request.</p>
+
+                                    <p>After starting our node js project and having created our package.json file, install Express in the app directory and save it to the dependency list. For example:</p>
+
+                                    <pre style="background: black; color: green; border-radius: 3px;">npm install express --save</pre>
+                                    <pre style="background: black; color: green; border-radius: 3px;">npm install pug --save</pre>
+
+
+                                    <p>In order to better understand the way we work, we will make a simple example, after creating the index.js file, we copy the following code:</p>
+                                    
+                                    <pre class="html4strict">var express = require('express');
+var app = express();
+
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+app.listen(3000, function () {
+  console.log('Server is up on port 3000');
+});
+</pre>
+
+                                    <p>The application starts a server and listens for connections on port 3000. The application responds with "Hello World!" For requests to the root URL (/) or to the root path. For each different access path, it will respond with a 404 Not Found error.</p>
+
+                                    <p>Ejecute la aplicación con el siguiente mandato:</p>
+                                    <pre style="background: black; color: green; border-radius: 3px;">node index.js</pre>
+                                    
+                                    <p>Then load http: // localhost: 3000 / into a browser to see the output, you can observe the following:</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post6_1.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>Now we can start with a more complicated example, in which we will show a text in the '/' address which consists of a template engine file in our case we will use 'pug', where we declare the title of the page that appears in the browser tab as well as the title of the body and the text next to a footer:</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post5_5.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>For this we must also understand the following in addressing.</p>
+
+                                    <p><strong>Basic Addressing</strong></p>
+
+                                    <p>Addressing refers to determining how an application responds to a client request at a particular endpoint, which is a URI (or a path) and a specific HTTP request method (GET, POST, etc.).</p>
+
+                                    <p>Each route can have one or more handler functions, which are excluded when the route is mapped. In this case we are using the GET:</p>
+
+
+                                    <p>Respond to the POST request in the root path (/), the application start page:</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post6_2.png" width="100%" alt="" />
+                                    <p>Let's create a function that generates the same text that has the home address, but modifying all uppercase and replacing the volatiles A, E, I, O, U with the numbers 4, 3, 1, 0, 5 respectively for this we create a function that accomplishes this:</p>
+
+                                    
+                                    <img class="img-responsive img-blog" src="images/caurosel/post6_3.png" width="100%" alt="" />
+
+                                    <p>Once the text has been modified we show it in the path '/encriptado' which uses the same index.pug file to display the modified text.</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post6_4.png" width="100%" alt="" />
+                                    
+                                    <p>Then load 'http://localhost:3000/' into a browser to see the output, you can observe the following:</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post6_5.png" width="100%" alt="" />
+
+
+                                    <p>Then load 'http://localhost:3000/encriptado' into a browser to see the output, you can observe the following:</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post6_6.png" width="100%" alt="" />
+
+                                    <p>the complete code we have in the following address:</p>
+
+                                    <pre style="background: black; color: green; border-radius: 3px;" class="text-center">https://github.com/krashoverrid/Programacion-de-aplicaciones-en-red/tree/master/laboratorio6</pre>
+
+                                </div>
+                            </div>
+                        </div><!--/.blog-item-->
+                        
+                        <div id="contact-page clearfix">
+                            <div class="status alert alert-success" style="display: none"></div>
+                            <div class="message_heading">
+                                <h4>Leave a Replay</h4>
+                                <p>Make sure you enter the(*)required information where indicate.HTML code is not allowed</p>
+                            </div> 
+      
+                            <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label>Name *</label>
+                                            <input type="text" class="form-control" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email *</label>
+                                            <input type="email" class="form-control" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>URL</label>
+                                            <input type="url" class="form-control">
+                                        </div>                    
+                                    </div>
+                                    <div class="col-sm-7">                        
+                                        <div class="form-group">
+                                            <label>Message *</label>
+                                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                                        </div>                        
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>     
+                        </div><!--/#contact-page-->
+                    </div><!--/.col-md-8-->
+
+                <aside class="col-md-4">
+                    <div class="widget search">
+                        <form role="form">
+                                <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
+                        </form>
+                    </div><!--/.search-->
+    				
+                    <div class="widget categories">
+                        <h3>Categories</h3>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="blog_category">
+                                    <li><a href="#">Computers <span class="badge">04</span></a></li>
+                                    <li><a href="#">Smartphone <span class="badge">10</span></a></li>
+                                    <li><a href="#">Gedgets <span class="badge">06</span></a></li>
+                                    <li><a href="#">Technology <span class="badge">25</span></a></li>
+                                </ul>
+                            </div>
+                        </div>                     
+                    </div><!--/.categories-->
+    				
+    				<div class="widget archieve">
+                        <h3>Archieve</h3>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="blog_archieve">
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> December 2013 <span class="pull-right">(97)</span></a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> November 2013 <span class="pull-right">(32)</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> October 2013 <span class="pull-right">(19)</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> September 2013 <span class="pull-right">(08)</a></li>
+                                </ul>
+                            </div>
+                        </div>                     
+                    </div><!--/.archieve-->
+    				
+                    <div class="widget tags">
+                        <h3>Tag Cloud</h3>
+                        <ul class="tag-cloud">
+                            <li><a class="btn btn-xs btn-primary" href="#">Apple</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Barcelona</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Office</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Ipod</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Stock</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Race</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">London</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Football</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Porche</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Gadgets</a></li>
+                        </ul>
+                    </div><!--/.tags-->
+    				
+                </aside>     
+
+            </div><!--/.row-->
+
+         </div><!--/.blog-->
+
+    </section><!--/#blog-->
+
+
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+</body>
+</html>
