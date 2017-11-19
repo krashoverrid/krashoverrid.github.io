@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Programacion de Aplicaciones en Redes</title>
+    
+    <!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+
+    <header id="header">
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                </div>
+                
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+        
+    </header><!--/header-->
+
+
+    <section id="blog" class="container">
+        <div class="center">
+            <h2>Publications</h2>
+            <!--<p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>-->
+        </div>
+
+        <div class="blog">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="blog-item">
+                        <img class="img-responsive img-blog" src="images/caurosel/nodejs.png" width="100%" alt="" />
+                            <div class="row">  
+                                <div class="col-xs-12 col-sm-2 text-center">
+                                    <div class="entry-meta">
+                                        <span id="publish_date">05  OCT</span>
+                                        <span><i class="fa fa-user"></i> <a href="#"> Meiser Gamboa</a></span>
+                                        <span><i class="fa fa-comment"></i> <a href="#">0 Comments</a></span>
+                                        <!--<span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>-->
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 blog-content">
+                                    <h2>Authentication with node.js and JWT</h2>
+                                    <h3>What is JWT?</h3>
+                                    <p>A JSON Web Token (JWT), defines an explicit protocol, compact and autonomous to transmit restricted information. This is often used to send information that can be verified and entrusted by a digital signature.</p>
+
+                                    <p>The JWT notification set represents a secure JSON compact object for URL, which is encoded in base64url and signed and / or digitally encrypted. The JSON object consists of zero or more name / value pairs (or members), where the names are strings and the values are arbitrary JSON values. These members are the claims represented by the JWT. Here is an example of JWT:</p>
+
+                                    <pre style="background: black; color: green; border-radius: 3px;">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtyYXNoMkB1bmkucGUiLCJfaWQiOiI1YTExYWZmY2U0MTQ3OTMzNzRhMGI3ZWEiLCJpYXQiOjE1MTExMDg4NTV9.TvXwKwFm7qmbdB3Qu66EoMQXoQvC0GS9gbDbVh2oIeU</pre>
+
+                                    <h3>How JWT works?</h3>
+                                    <p>JWT works as a two-way protocol where a request is made and the response is generated from a server.</p>
+                                    <p>The browser or the requesting device makes the request (user login information for authentication) for JWT encoded data, the server generates the signed token and returns it to the client (mobile device / browser) as shown in the previous diagram.</p>
+                                    <p>Subsequently, the token can be sent to the http request for every other request that needs authentication on the server. The server validates the token and, if it is valid, returns the secure resource to the client.</p>
+                                    <p>This token is often signed using any secure signature method (for example, asymmetric key algorithm such as HMAC SHA-256 or Asymmetric, public key system, such as RSA).</p>
+                                    
+                                    <h3>JWT advantages?</h3>
+                                    <ul>
+                                        <li>
+                                            <p>Compact: JWT is compact, which means that it can be sent together with the http request as a body or as a header attribute.</p>
+                                        </li>
+                                        <li>
+                                            <p>Stateless / autonomous: the token contains all the information to identify the user, which eliminates the need for the status of the session. If we use a load balancer, we can move the user to any server, instead of being linked to the same server where we started the session. This also improves performance, since there is no search on the server for deserialization on every request.</p>
+                                        </li>
+                                        <li>
+                                            <p>Reuse: we can have many separate servers that run on multiple platforms and domains and reuse the same token to authenticate the user. It is easy to build an application that shares permissions with another application.</p>
+                                        </li>
+                                        <li>
+                                            <p>Security: there is no need to worry about cross-site request forgery attacks (CSRF).</p>
+                                        </li>
+                                    </ul>
+
+                                    <h3>Steps:</h3>
+                                    <p>1. Install the package "jsonwebtoken" <strong>npm install jsonwebtoken -save</strong>
+Jsonwebtoken is a Node package module that was developed against the draft-ietf-jose-json-web-signature-08firma / verification of the Certification Chain.</p>
+                                    
+                                    <p>2. Create the user model
+In the api / models folder, create a file called user userModel.jse executing touch api / models / userModel.js.</p>
+                                    
+                                    <p>As you know, MongoDB allows us to create a scheme, where we can create documents. We will use this to create a user directly in the user document.</p>
+                                    <p>In this file, create a mongoose scheme with the following properties:
+</p>
+                                    
+                                    <ul>
+                                        <li>fullName</li>
+                                        <li>Email address</li>
+                                        <li>password</li>
+                                        <li>the creation date</li>
+                                    </ul>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post7_1.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>3. Create the user handlers (i.e. sign in, register, and login required)</p>
+                                    <p>In the api/controllers folder, create a file called user userController.js by running touch api/controllers/userController.js</p>
+
+                                    <p>In the userController file, create three different handlers to handle:</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post7_2.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>As shown in the diagram above, our model and JWT were made available to the files that require them first and foremost.</p>
+                                    <p>In the register handler, we instantiated our User model with the form data, after which we saved the document in the database.</p>
+
+                                    <p>Note: Always perform form validation on the body properties before saving them to User model.</p>
+                                    <p>4. Create the user routes and update “/tasks” route,</p>
+                                    <p>Since we have some routes before, let’s update it by adding two other routes for the user activities.</p>
+                                    <p>First and foremost, let’s make the user handlers available in the routes, before we create the routes by updating:</p>
+
+                                    <pre style="background: black; color: green; border-radius: 3px;">var todoList = require(‘../controllers/todoListController’);</pre>
+                                    <pre style="background: black; color: green; border-radius: 3px;">var userHandlers = require(‘../controllers/userController.js’);</pre>
+                                    <p>Here is a route for the user to register/signup on the app, and a route for the user to be able to sign in/have access to the app with their created credentials:</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post7_3.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>
+                                        After creating the route, add the loginRequired handler to the post request on "/tasks".</p>
+                                        <p>This will ensure that the user is logged in before he/she can create a todo task.</p>
+                                    <p>5. Updating the server.js file</p>
+                                    <p>Going over to the server.js file, we need to add the newly created User model and also add a middleware to the express server that will check the state of the user(logged in or not logged in)</p>
+                                    <p>To add the user, add</p>
+                                    <img class="img-responsive img-blog" src="images/caurosel/post7_4.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>in the terminal we write "npm start" in order to execute the server.</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post7_5.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>Let’s test what we have done so far via a Postman:</p>
+                                    <p>Launch postman --> select POST method --> add localhost:3000/tasks (the port the app is listening on) to the form field keys and values in the URL section --> click send.</p>
+                                    <p>A status code of 401 shows that our authentication is working with a response</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post7_6.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>Now, let’s create a user, then sign the user in for us to have access to create a todo task.</p>
+
+                                    <p>On the postman, change the URL to "/auth/register", enter the key and values for fullName, email, and password, and click send. This should give you a response like so:</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post7_7.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>After this, let’s sign the user in with the credentials we just created by changing the URL to localhost:3000/auth/sign_in. Enter the keys and values for email and password as the case maybe.</p>
+                                    <p>On send, a status of 200 and the generated token is returned.</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post7_8.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>Add this token to the authorization header by clicking on the header.</p>
+                                    <p>Then, enter the parameters for the key and value for the todo task. You want to create as shown below and send:</p>
+
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post7_9.png" width="100%" alt="" style="border: solid;" />
+
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post7_7.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>The source code is:</p>
+
+                                    <pre style="background: black; color: green; border-radius: 3px;" class="text-center">https://github.com/krashoverrid/Programacion-de-aplicaciones-en-red/tree/master/laboratorio9</pre>
+
+                                </div>
+                            </div>
+                        </div><!--/.blog-item-->
+                        
+                        <div id="contact-page clearfix">
+                            <div class="status alert alert-success" style="display: none"></div>
+                            <div class="message_heading">
+                                <h4>Leave a Replay</h4>
+                                <p>Make sure you enter the(*)required information where indicate.HTML code is not allowed</p>
+                            </div> 
+      
+                            <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label>Name *</label>
+                                            <input type="text" class="form-control" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email *</label>
+                                            <input type="email" class="form-control" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>URL</label>
+                                            <input type="url" class="form-control">
+                                        </div>                    
+                                    </div>
+                                    <div class="col-sm-7">                        
+                                        <div class="form-group">
+                                            <label>Message *</label>
+                                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                                        </div>                        
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>     
+                        </div><!--/#contact-page-->
+                    </div><!--/.col-md-8-->
+
+                <aside class="col-md-4">
+                    <div class="widget search">
+                        <form role="form">
+                                <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
+                        </form>
+                    </div><!--/.search-->
+    				
+                    <div class="widget categories">
+                        <h3>Categories</h3>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="blog_category">
+                                    <li><a href="#">Computers <span class="badge">04</span></a></li>
+                                    <li><a href="#">Smartphone <span class="badge">10</span></a></li>
+                                    <li><a href="#">Gedgets <span class="badge">06</span></a></li>
+                                    <li><a href="#">Technology <span class="badge">25</span></a></li>
+                                </ul>
+                            </div>
+                        </div>                     
+                    </div><!--/.categories-->
+    				
+    				<div class="widget archieve">
+                        <h3>Archieve</h3>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="blog_archieve">
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> December 2013 <span class="pull-right">(97)</span></a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> November 2013 <span class="pull-right">(32)</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> October 2013 <span class="pull-right">(19)</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> September 2013 <span class="pull-right">(08)</a></li>
+                                </ul>
+                            </div>
+                        </div>                     
+                    </div><!--/.archieve-->
+    				
+                    <div class="widget tags">
+                        <h3>Tag Cloud</h3>
+                        <ul class="tag-cloud">
+                            <li><a class="btn btn-xs btn-primary" href="#">Apple</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Barcelona</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Office</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Ipod</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Stock</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Race</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">London</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Football</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Porche</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Gadgets</a></li>
+                        </ul>
+                    </div><!--/.tags-->
+    				
+                </aside>     
+
+            </div><!--/.row-->
+
+         </div><!--/.blog-->
+
+    </section><!--/#blog-->
+
+
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+</body>
+</html>
