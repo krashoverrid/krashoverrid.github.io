@@ -76,202 +76,71 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-10 blog-content">
-                                    <h2>Going real time with Socket.IO, Node.Js, and React</h2>
-                                    <h3>What you will learn</h3>
-                                    <ol>
-                                        <li><p><p>What a WebSocket is</p></p></li>
-                                        <li><p>How to Use Socket.IO and Node.js alongside with React</p></li>
-                                    </ol>
+                                    <h2>Chat with sockets and nodejs</h2>
+
+                                    <p>When you want to build an application you have to consider several factors: programming, design, server configuration, among other things.</p>
+
+                                    <p>You can take on all that burden or seek support in existing services and focus on the core: develop your application.</p>
+
+                                    <p>In this post I will show how to create a simple application with nodejs that returns a message and how to leave it hosted in Heroku.</p>
+
+
                                     <h3>Requirements</h3>
+                                    <ol>
+                                        <li><p>Node JS, <a href="https://nodejs.org/es/">para decargar.</a></p></li>
+                                        <li><p>Heroku CLI, <a href="https://devcenter.heroku.com/articles/heroku-cli">para decargar.</a></p></li>
+                                    </ol>
 
-                                    <p>The latest version of Node.js is available from the <a href="https://nodejs.org/en/">official website</a>.</p>
+                                    <h3>Create una account in Heroku</h3>
+                                    <p>We enter the <a href="https://devcenter.heroku.com">Heroku url</a> and then click on "Sing Up" </p>
 
-                                    <p>If you use Linux, you should absolutely check out <a href="https://nodesource.com/blog/installing-node-js-8-tutorial-linux-via-package-manager">Nodesource</a>: they offer Node.js 8.x.x and NPM 5.x.x</p>
+                                    <img class="img-responsive img-blog" src="images/caurosel/post9_5.png" width="100%" alt="" style="border: solid;" />
 
-                                    <p>Last but not least, if you haven't got an API key from DarkSky yet, go grab one: we will use the <a href="https://darksky.net/dev/">DarkSky API</a> later on inside our ExpressJS application.</p>
+                                    <p>you register and then add an app:</p>
 
-                                    <h3>The WebSocket protocol, Node.js, and Socket.IO</h3>
-                                    <p><strong>WebSocket</strong> is basically an internet communication protocol with a relevant interesting feature: it provides a <strong>full-duplex channel</strong> over a single TCP connection.</p>
+                                    <img class="img-responsive img-blog" src="images/caurosel/post9_6.png" width="100%" alt="" style="border: solid;" />
 
-                                    <p>With <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets</a>, a client and a server will be able to talk to each other in <strong>real time</strong>, kind of like they were involved in a <strong>telephone call</strong>: once connected, a client will be able to receive data from the server, without any need to continuously refresh the web page. On the other hand the server will also be able to receive data in real time from the client inside the same connection.</p>
+                                    <img class="img-responsive img-blog" src="images/caurosel/post9_7.png" width="100%" alt="" style="border: solid;" />
+                                    <p>In this case, since we are not using any database or an extra app, we should not install anything additionally.</p>
 
-                                    <p>What's more interesting is the WebSockets ability to work with an event-driven model: both the server and the client can react to events and messages.</p>
 
-                                    <p>WebSockets opened up an entire world of opportunities for web developers. If you're wondering how to implement this fantastic tecnology into your Node.js applications, well, the answer is Socket.IO, one of the most popular real-time engines for Node.js.</p>
 
-                                    <img class="img-responsive img-blog" src="images/caurosel/post8_1.png" width="100%" alt="" style="border: solid;" />
+                                    <p>Download the following <a href="https://github.com/krashoverrid/Programacion-de-aplicaciones-en-red/tree/master/laboratorio10">ChatSockets</a> project.</p>
 
-                                    <p>Socket.IO works mostly by the means of <strong>Node.js events:</strong> you can listen for a connection event, fire up a function when a new user connects to the server, emit a message (basically an event) over a socket, and much more.</p>
-                                    <p>Socket.IO is used by countless companies and developers. It found its way through instant messaging applications, real-time analytics and monitoring, and it is used also for streaming and document collaboration.</p>
+                                    <p>First open the terminal and execute the following:</p>
 
-                                    <p>However one thing to keep in mind is that Socket.IO is not an WebSocket implementation.</p>
+                                    <pre style="background: black; color: green; border-radius: 4px;"><strong>git clone https://github.com/krashoverrid/Programacion-de-aplicaciones-en-red/tree/master/laboratorio10</strong></pre>
 
-                                    <p>The authors state that "Socket.IO indeed uses WebSocket as a transport when possible [..] but a WebSocket client will not be able to connect to a Socket.IO server, and a Socket.IO client will not be able to connect to a WebSocket server".</p>
+                                    <p>we enter the folder that is generated with the following line:</p>
 
-                                    <p>Besides that, the framework behaves exactly like WebSockets and here lies its power: with this in place and with a basic understanding of the WebSocket procotol, it's time to get our hands dirty.</p>
+                                    <pre style="background: black; color: green; border-radius: 4px;"><strong>cd laboratorio10</strong></pre>
 
-                                    <h3>Building a real-time server: scaffolding the project</h3>
-                                    <p>To start with, create an empty directory named <code>socket-io-server</code>:</p>
+                                    <h3>Subiendo todo a Heroku</h3>
 
-                                    <pre style="background: black; color: green; border-radius: 3px;">mkdir socket-io-server</pre>
+                                    <p>Having installed Heroku CLI, it is necessary to login with our credentials:</p>
 
-                                    <p>then move inside the newly created directory:</p>
+                                    <pre style="background: black; color: green; border-radius: 4px;"><strong>heroku login</strong></pre>
 
-                                    <pre style="background: black; color: green; border-radius: 3px;">cd socket-io-server</pre>
-                                    <p>and initialize the package.json by running:</p>
+                                    <img class="img-responsive img-blog" src="images/caurosel/post9_1.png" width="100%" alt="" style="border: solid;" />
 
-                                    <pre style="background: black; color: green; border-radius: 3px;">npm init</pre>
+                                    <p>now we add the repository the contents of the folder, with the following command:</p>
 
-                                    <p>We won’t publish any module to NPM so you can safely accept the default choices and just move on.</p>
+                                    <pre style="background: black; color: green; border-radius: 4px;"><strong>git add .</strong></pre>
 
-                                    <p>We also need to install Socket.io, which is the main dependency of our project, ExpressJS, and Axios. Express will help us building the server and Axios will be used to make <a href="https://codeburst.io/4-ways-for-making-http-s-requests-with-node-js-c524f999942d">HTTP requests</a> to the <a href="https://darksky.net/dev/">DarkSky API</a>:</p>
+                                    <img class="img-responsive img-blog" src="images/caurosel/post9_2.png" width="100%" alt="" style="border: solid;" />
 
-                                    <pre style="background: black; color: green; border-radius: 3px;">npm i axios express socket.io</pre>
+                                    <p>we execute the following command:</p>
+                                    <pre style="background: black; color: green; border-radius: 4px;"><strong>git commit -am 'socket chat'</strong></pre>
 
-                                    <h3>Building a real-time server: the code</h3>
+                                    <img class="img-responsive img-blog" src="images/caurosel/post9_3.png" width="100%" alt="" style="border: solid;" />
 
-                                    <p>You might be tempted to put a call to DarkSky inside the componentDidMount of a React component. Maybe you should poll the API every 10 seconds with a call to setInterval directly inside componentDidMount?</p>
+                                    <p>Now we can upload the changes to Heroku:</p>
 
-                                    <p>Yes I'm guilty, I've done things like that in the recent past, and you must remember to clean the interval every time the component gets unmounted. Luckily, there are better ways: in our case, a simple real-time server will get the job done.</p>
+                                    <pre style="background: black; color: green; border-radius: 4px;"><strong>git push heroku master</strong></pre>
 
-                                    <p>The server will use Socket.IO to emit a message every 10 seconds and the client will listen for the same message over a real-time socket. Sounds neat? It is.</p>
+                                    <img class="img-responsive img-blog" src="images/caurosel/post9_4.png" width="100%" alt="" style="border: solid;" />
 
-                                    <p>Am I going to put React into the mix when I could have simply rendered the HTML with Pug or Jade? Yes, because it is very interesting to see how React can work alongside with Socket.IO.</p>
-
-                                    <p>Create a file named app.js inside your project's directory. This will hold the actual server:</p>
-
-                                    <img class="img-responsive img-blog" src="images/caurosel/post8_2.png" width="100%" alt="" style="border: solid;" />
-
-                                    <p>The code above should be no mistery for you: it is a bunch of requires followed by the instantion of a new ExpressJS application. What's rather interesting there is the call to socketIo() to initialize a new by passing in the server object. By doing so we have wired up the ExpressJS server to Socket.IO.</p>
-
-                                    <p>Crea un archivo llamado index.jsdentro del routesdirectorio:</p>
-
-                                    <img class="img-responsive img-blog" src="images/caurosel/post8_3.png" width="100%" alt="" style="border: solid;" />
-
-                                    <h3>How does Socket.IO works by the way?</h3>
-
-                                    <p>The first and most important method you will encounter while working with Socket.IO is <strong>on()</strong>. The on() method takes two arguments: the <strong>name of the event</strong>, in this case <strong>"connection"</strong> and a callback which will be executed after every connection event. on() is nothing more than a <a href="https://nodejs.org/api/events.html#events_events">core Node.js method</a> tied to the EventEmitter class.</p>
-
-                                    <p>The connection event returns a socket object which will be passed to the callback function. By using said socket you will be able to send data back to the client in real time.</p>
-
-                                    <p>If you remember, Caty wants to know the temperature every 10 seconds: we can use setInterval inside the callback, and inside setInterval we can use another arrow function which will call the getApiAndEmit function we saw earlier. The code should be really straightforward:</p>
-
-                                    <pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"connection"</span><span class="p">,</span> <span class="nx">socket</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"New client connected"</span><span class="p">),</span> <span class="nx">setInterval</span><span class="p">(</span>
-    <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">getApiAndEmit</span><span class="p">(</span><span class="nx">socket</span><span class="p">),</span>
-    <span class="mi">10000</span>
-  <span class="p">);</span>
-  <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"disconnect"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Client disconnected"</span><span class="p">));</span>
-<span class="p">});</span>
-</pre>
-
-
-                                    <p>Notice also how we can listen for the disconnect event. It will be fired as soon as a client disconnects itself from the server. For now we will just print a simple message to the console.</p>
-
-                                    <p>The function takes the socket as an argument, makes an HTTP request to the DarkSky API (don't forget to fill the url with your actual API key), and finally emits the message "FromAPI" which will contain the current temperature value for the given coordinates.</p>
-
-                                    <p>The emitted message can be intercepted by the Socket.IO client (React in our case).</p>
-
-                                    <p>We can test our server by starting the application with:</p>
-
-                                    <pre style="background: black; color: green; border-radius: 3px;">node app.js</pre>
-
-                                    <p>As soon as the server starts you'll see the following output:</p>
-
-                                    <pre style="background: black; color: green; border-radius: 3px;">Listening on port 4001</pre>
-
-                                    <p>which confirms that everything is working fine.</p>
-
-                                    <h2>Making use of our realtime server: the React client</h2>
-
-                                    <p>Now that we have our tiny real-time server in place it's time to make sense of our data. We want to display the current temperature in Florence and we will use React to get the job done.</p>
-
-                                    <p>Why? Because React does exactly what its name implies: it reacts to state changes. Our server will emit a message containing the current temperature which will be updated every 10 seconds.</p>
-
-                                    <p>React can store the temperature value inside a component's state and render only the piece of text subject to changes.</p>
-
-                                    <p>If it's your first time with React, install create-react-app to get started quickly by running:</p>
-
-                                    <pre style="background: black; color: green; border-radius: 3px;">npm i -g create-react-app</pre>
-
-                                    <p>Then create the React application by running:</p>
-
-                                    <pre style="background: black; color: green; border-radius: 3px;">create-react-app socket-io-client</pre>
-
-                                    <p>move inside the newly created directory:</p>
-
-                                    <pre style="background: black; color: green; border-radius: 3px;">cd socket-io-client</pre>
-
-                                    <p>and install the Socket.IO client:</p>
-
-                                    <pre style="background: black; color: green; border-radius: 3px;">npm i socket.io-client</pre>
-
-                                    <p>finally start the development React server:</p>
-
-                                    <pre style="background: black; color: green; border-radius: 3px;">npm start</pre>
-
-                                    <p>To keep things simple we will just use the App.js component which lies inside the src directory.</p>
-
-                                    <p>Open up <code>App.js</code>. You can safely remove all the content inside the file and replace the code with the following:</p>
-
-                                    <pre><span></span><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"react"</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">socketIOClient</span> <span class="nx">from</span> <span class="s2">"socket.io-client"</span><span class="p">;</span>
-
-<span class="kr">class</span> <span class="nx">App</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
-  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kr">super</span><span class="p">();</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">response</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="nx">endpoint</span><span class="o">:</span> <span class="s2">"http://127.0.0.1:4001"</span>
-    <span class="p">};</span>
-  <span class="p">}</span>
-
-  <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="p">{</span> <span class="nx">endpoint</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">socketIOClient</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">);</span>
-    <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"FromAPI"</span><span class="p">,</span> <span class="nx">data</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">response</span><span class="o">:</span> <span class="nx">data</span> <span class="p">}));</span>
-  <span class="p">}</span>
-
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="p">{</span> <span class="nx">response</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
-    <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span> <span class="nx">textAlign</span><span class="o">:</span> <span class="s2">"center"</span> <span class="p">}}</span><span class="o">&gt;</span>
-        <span class="p">{</span><span class="nx">response</span>
-          <span class="o">?</span> <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
-              <span class="nx">The</span> <span class="nx">temperature</span> <span class="k">in</span> <span class="nx">Florence</span> <span class="nx">is</span><span class="o">:</span> <span class="p">{</span><span class="nx">response</span><span class="p">}</span> <span class="err">°</span><span class="nx">F</span>
-            <span class="o">&lt;</span><span class="err">/p&gt;</span>
-          <span class="o">:</span> <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Loading</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/p&gt;}</span>
-      <span class="o">&lt;</span><span class="err">/div&gt;</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</pre>
-
-                                    <p>now point your browser to http://localhost:3000 and wait 10 seconds. You should see the following output (I've added some styling to my component, feel free to add some CSS to your App.js too):</p>
-
-                                    <img class="img-responsive img-blog" src="images/caurosel/post8_4.png" width="100%" alt="" style="border: solid;" />
-
-                                    <p>If you keep an eye on the page you'll notice the temperature changing over time, every 10 seconds.</p>
-
-                                    <p>Es la magia de Socket.IO: tan pronto como se monta el <strong>componente</strong> React, el <strong>componentDidMount</strong> crea una nueva conexión a nuestro servidor Socket.IO instanciando un nuevo socket:</p>
-
-                                    <pre style="background: black; color: green; border-radius: 3px;">const socket = socketIOClient(endpoint);  </pre>
-                                    <p>If you remember, the socket is a communication channel and we're able to listen for any event happening inside it:</p>
-
-                                    <pre style="background: black; color: green; border-radius: 3px;">socket.on("FromAPI", data => this.setState({ response: data }));</pre>
-
-                                    <p>If you take a look at the server-side code, the "FromAPI" message/event gets fired as soon as a new client connects to the server.</p>
-
-                                    <p>The client can listen for the event with the on() method and do something with the data contained inside the message/event. In our case we simply want to store the temperature inside our component' store.</p>
-
-                                    <p>That's it! Once established, the connection will receive the updates from the server without any need to refresh the page!</p>
-
-
-                                    <p>The source code is:</p>
-
-                                    <pre style="background: white; color: green; border-radius: 3px;" class="text-center"><a href="https://github.com/krashoverrid/Programacion-de-aplicaciones-en-red/tree/master/class9%20-%20Sockets">https://github.com/krashoverrid/Programacion-de-aplicaciones-en-red/tree/master/class9%20-%20Sockets</a></pre>
+                                    <p>finally we enter the url generated by Heroku, the application that we have running is the following <a href="https://chatroompro.herokuapp.com/">click to see the demo</a>.</p>
 
                                 </div>
                             </div>
