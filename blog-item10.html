@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Programacion de Aplicaciones en Redes</title>
+    
+    <!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+
+    <header id="header">
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                </div>
+                
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+        
+    </header><!--/header-->
+
+
+    <section id="blog" class="container">
+        <div class="center">
+            <h2>Publications</h2>
+            <!--<p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>-->
+        </div>
+
+        <div class="blog">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="blog-item">
+                        <img class="img-responsive img-blog" src="images/caurosel/nodejs.png" width="100%" alt="" />
+                            <div class="row">  
+                                <div class="col-xs-12 col-sm-2 text-center">
+                                    <div class="entry-meta">
+                                        <span id="publish_date">14  DIC</span>
+                                        <span><i class="fa fa-user"></i> <a href="#"> Meiser Gamboa</a></span>
+                                        <span><i class="fa fa-comment"></i> <a href="#">0 Comments</a></span>
+                                        <!--<span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>-->
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 blog-content">
+                                    <h2>Blog with node JS </h2>
+
+                                    <p>The following project that we will develop uses the following resources:</p>
+                                    <ol>
+                                        <li>bcrypt</li>
+                                        <li>body-parser</li>
+                                        <li>cookie-parser</li>
+                                        <li>ebug</li>
+                                        <li>express</li>
+                                        <li>express-session</li>
+                                        <li>express-validator</li>
+                                        <li>jsonwebtoken</li>
+                                        <li>mongodb</li>
+                                        <li>mongoose</li>
+                                        <li>morgan</li>
+                                        <li>multer</li>
+                                        <li>pug</li>
+                                        <li>serve-favicon</li>
+                                        <li>sweetalert</li>
+                                    </ol>
+
+                                    <p>Before installing these resources we created the project folder with express generator:</p>
+
+                                    <pre style="background: black; color: green; border-radius: 4px;"><strong>npm install express-generator -g</strong></pre>
+
+                                    <pre style="background: black; color: green; border-radius: 4px;"><strong>express --view=pug bloging</strong></pre>
+
+                                    <p>we enter the created folder, in our case the folder is bloging:</p>
+
+                                    <pre style="background: black; color: green; border-radius: 4px;"><strong>cd bloging</strong></pre>
+
+                                    <p>then we install the dependencies:</p>
+
+                                    <pre style="background: black; color: green; border-radius: 4px;"><strong>npm install</strong></pre>
+                                    <p>we verify what dependencies are missing and we install:</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_1.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>Once installed, we can start the server as a test of operation, with the following command:</p>
+                                    <pre style="background: black; color: green; border-radius: 4px;"><strong> DEBUG=blogging:* npm start</strong></pre>
+
+                                    <p>Once the command is executed we can go to the following address: <a href="localhost:3000/">localhost:3000/</a></p>
+
+                                    <p>The next thing we will do is configure express-validator and express-session, these will be placed in the "app.js" file. We should also configure the mongoose and mongoose and we will have the following form:</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_2.png" width="100%" alt="" style="border: solid;" />
+
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_3.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>to make the connection to the database in mongodb, we must create a folder with the name of "db", and inside this folder we create the file called "mongoose.js". With the following structure:</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_4.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>then we can create the structured models of the database in which for this project we have two collections of name "posts" and "users" which we create Schemas of each one we export each model to the server, we have the following structure:</p>
+
+                                    <p><strong>"posts.js"</strong></p>
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_5.png" width="100%" alt="" style="border: solid;" />
+
+
+                                    <p><strong>"users.js"</strong></p>
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_6.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>Following with the project we must modify the file "/routes/index.js" here the routes of the project are configured and also the process that they carry out in each view and method. The addresses we have are the following:</p>
+
+                                    <ol>
+                                        <li>'/' -> access to the general public.</li>
+                                        <li>'/ login' -> template that allows access to the path / admin.</li>
+                                        <li>'/ admin' -> is for access to those who are registered in the database.</li>
+                                        <li>'/ register' -> allows us to register in the database.</li>
+                                        <li>'/ post' -> allows us to post and store it in the database.</li>
+                                    </ol>
+                                        
+                                    <p>with the middleware express-session allows us to create a cookie with the information of the start of session which helps us to verify the start of the session for the private routes otherwise not having access redirects us to the public view '/'</p>
+
+                                    <p>We have the following structure:</p>
+
+                                    <p><strong>index.js (route)</strong></p>
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_7.png" width="100%" alt="" style="border: solid;" />
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_8.png" width="100%" alt="" style="border: solid;" />
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_9.png" width="100%" alt="" style="border: solid;" />
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_10.png" width="100%" alt="" style="border: solid;" />
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_11.png" width="100%" alt="" style="border: solid;" />
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_12.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p>to be able to finish we must realize the views in which we will see reflected the variables that we need to show as well as the list of post generated.</p>
+
+                                    <p><strong>layout.pug: </strong> This view is the header and the general scripts that we need throughout the project, pug allows us to create files and be able to partition the code into several files that have some sections in common.</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_13.png" width="100%" alt="" style="border: solid;" />
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_14.png" width="100%" alt="" style="border: solid;" />
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_15.png" width="100%" alt="" style="border: solid;" />
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_16.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p><strong>index.pug: </strong> In this view it receives the list of post that will be shown in a grid of 3 for each row to which the users and clients of the project will have access.</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_17.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p><strong>login.pug: </strong> in this view you will find the session initiation formula and verify the user permissions.</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_18.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p><strong>postear.pug: </strong> this view allows us to stack the post in the list connected to mongoDB.</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_19.png" width="100%" alt="" style="border: solid;" />
+
+                                    <p><strong>register.pug: </strong> It allows us to register through the form that owns that stores the permissions to the database.</p>
+
+                                    <img class="img-responsive img-blog" src="images/caurosel/post10_20.png" width="100%" alt="" style="border: solid;" />
+
+                                    <pre style="background: black; color: green; border-radius: 4px;"><strong>git push heroku master</strong></pre>
+
+                                </div>
+                            </div>
+                        </div><!--/.blog-item-->
+                        
+                        <div id="contact-page clearfix">
+                            <div class="status alert alert-success" style="display: none"></div>
+                            <div class="message_heading">
+                                <h4>Leave a Replay</h4>
+                                <p>Make sure you enter the(*)required information where indicate.HTML code is not allowed</p>
+                            </div> 
+      
+                            <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label>Name *</label>
+                                            <input type="text" class="form-control" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email *</label>
+                                            <input type="email" class="form-control" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>URL</label>
+                                            <input type="url" class="form-control">
+                                        </div>                    
+                                    </div>
+                                    <div class="col-sm-7">                        
+                                        <div class="form-group">
+                                            <label>Message *</label>
+                                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                                        </div>                        
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>     
+                        </div><!--/#contact-page-->
+                    </div><!--/.col-md-8-->
+
+                <aside class="col-md-4">
+                    <div class="widget search">
+                        <form role="form">
+                                <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
+                        </form>
+                    </div><!--/.search-->
+    				
+                    <div class="widget categories">
+                                          
+                    </div><!--/.categories-->
+    				
+    				<div class="widget archieve">
+                        <h3>Archieve</h3>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="blog_archieve">
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> December 2013 <span class="pull-right">(97)</span></a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> November 2013 <span class="pull-right">(32)</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> October 2013 <span class="pull-right">(19)</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> September 2013 <span class="pull-right">(08)</a></li>
+                                </ul>
+                            </div>
+                        </div>                     
+                    </div><!--/.archieve-->
+    				
+                    <div class="widget tags">
+                        
+                    </div><!--/.tags-->
+    				
+                </aside>     
+
+            </div><!--/.row-->
+
+         </div><!--/.blog-->
+
+    </section><!--/#blog-->
+
+
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+</body>
+</html>
